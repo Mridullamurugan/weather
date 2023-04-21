@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+<!-- the DIV that will contain the widget -->
+<div class="weatherWidget" ></div>
+    <script>
+   window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"b86a1e4956a5a4fb967e89d8ef7e2da6", //Sign up for your personal key
+       location:"India,chennai", //Enter an address
+       unitGroup:"metric", //"us" or "metric"
+       forecastDays:5, //how many days forecast to show
+       title:"London,UK", //optional title to show in the 
+       showTitle:true, 
+       showConditions:true
+   });
+  
+   (function() {
+   var d = document, s = d.createElement('script');
+   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
+</head>
+<body>
+</script>
+    <form id="form"> <input type="text" id="search" placeholder="Search By Loaction" autocomplete="off"> </form>
+    <main id="main"> </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
